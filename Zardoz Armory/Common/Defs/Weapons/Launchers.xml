@@ -1,0 +1,571 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_SPNKr</defName>
+    <label>SPNKr launcher rocket</label>
+    <graphicData>
+      <texPath>Projectiles/Proj_Rocket</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+    </graphicData>
+    <thingClass>Projectile_Explosive</thingClass>
+    <projectile>
+      <damageDef>SPNKr</damageDef>
+      <explosionRadius>2.9</explosionRadius>
+      <speed>48</speed>
+    </projectile>
+  </ThingDef>
+  
+    <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_40mm</defName>
+    <label>40mm grenade</label>
+    <graphicData>
+      <texPath>Projectiles/GrenadeLauncherShot</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+    </graphicData>
+    <thingClass>Projectile_Explosive</thingClass>
+    <projectile>
+      <damageDef>40mm</damageDef>
+      <explosionRadius>1.9</explosionRadius>
+      <speed>30</speed>
+    </projectile>
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_AntiArmor_Rocket</defName>
+    <label>rocket</label>
+    <graphicData>
+      <texPath>Projectiles/Proj_Rocket</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+    </graphicData>
+    <thingClass>Projectile_Explosive</thingClass>
+    <projectile>
+      <damageDef>Bomb</damageDef>
+      <damageAmountBase>80</damageAmountBase>
+      <explosionRadius>1.0</explosionRadius>
+      <speed>75</speed>
+      <armorPenetrationBase>0.9</armorPenetrationBase>
+    </projectile>
+  </ThingDef>
+  
+  
+
+  <ThingDef ParentName="BaseWeapon">
+    <defName>Gun_SPNKr</defName>
+    <label>SPNKr launcher</label>
+    <description>High Explosive Dual Purpose rocket launcher.\n\nFiring 2 rockets doubles the user's hit probability and doubles the carnage. Fires a salvo of 2 rockets in short succession.\n\nYou do not want to be on the other end of this.</description>
+    <techLevel>Industrial</techLevel>
+    <smeltable>true</smeltable>
+    <tickerType>Normal</tickerType>
+    <thingCategories>
+      <li>WeaponsRanged</li>
+    </thingCategories>
+    <graphicData>
+      <texPath>Launchers/SPNKrlauncher</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+	<equippedAngleOffset>45</equippedAngleOffset>
+	<soundInteract>Interact_Rifle</soundInteract>
+	<generateCommonality>0.1</generateCommonality>
+    <statBases>
+      <MarketValue>1200</MarketValue>
+      <Flammability>0.5</Flammability>
+	  <WorkToMake>71000</WorkToMake>
+      <Mass>18.0</Mass>
+      <RangedWeapon_Cooldown>4</RangedWeapon_Cooldown>
+    </statBases>
+	<costList>
+		<Steel>28</Steel>
+		<ComponentIndustrial>2</ComponentIndustrial>
+	</costList>
+    <weaponTags Inherit="False">
+		<li>BossGun</li>
+		<li>ammo_rocket/2/1</li>
+	</weaponTags>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_SPNKr</defaultProjectile>
+        <warmupTime>3.5</warmupTime>
+        <ai_AvoidFriendlyFireRadius>10</ai_AvoidFriendlyFireRadius>
+        <range>35.9</range>
+	    <forcedMissRadius>3</forcedMissRadius>
+        <burstShotCount>2</burstShotCount>
+        <ticksBetweenBurstShots>160</ticksBetweenBurstShots>
+        <soundCast>Shot_SPNKr</soundCast>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <onlyManualCast>true</onlyManualCast>
+        <muzzleFlashScale>14</muzzleFlashScale>
+		<ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
+		<targetParams>
+			<canTargetLocations>true</canTargetLocations>
+		</targetParams>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>10</power>
+        <cooldownTime>2.3</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+  
+    <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>Gun_40mmLauncher</defName>
+    <label>40mm launcher</label>
+    <description>40mm Grenade Launcher, shoots HE ammo. Nicknamed the blooptube for it's distinctive sound. If you hear it, hit the deck.</description>
+    <graphicData>
+      <texPath>Launchers/M79launcher</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Interact_Rifle</soundInteract>
+	<equippedAngleOffset>45</equippedAngleOffset>
+    <weaponClasses>
+      <li>RangedHeavy</li>
+    </weaponClasses>
+    <weaponTags>
+      <li>Grenade</li>
+	  <li>ammo_he/25/1</li>
+    </weaponTags>
+    <statBases>
+      <WorkToMake>40000</WorkToMake>
+      <Mass>3.4</Mass>
+      <RangedWeapon_Cooldown>3.5</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+      <Steel>75</Steel>
+      <ComponentIndustrial>4</ComponentIndustrial>
+    </costList>
+    <recipeMaker>
+      <skillRequirements>
+        <Crafting>4</Crafting>
+      </skillRequirements>
+      <researchPrerequisite>GasOperation</researchPrerequisite>
+    </recipeMaker>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_40mm</defaultProjectile>
+        <warmupTime>3.5</warmupTime>
+        <range>31.9</range>
+        <forcedMissRadius>2.9</forcedMissRadius>
+        <burstShotCount>1</burstShotCount>
+        <soundCast>Shot_40mm</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>14</muzzleFlashScale>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+        </targetParams>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseGun">
+    <defName>Gun_AntiArmor_Rocket</defName>
+    <label>anti-armor rocket launcher</label>
+    <description>It is a rocket launcher that can penetrate solid armor.</description>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <texPath>Launchers/M72launcher</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+	<equippedAngleOffset>45</equippedAngleOffset>
+
+    <statBases>
+	  <MarketValue>400</MarketValue>
+      <Mass>10</Mass>
+	  <AccuracyTouch>0.80</AccuracyTouch>
+      <AccuracyShort>0.75</AccuracyShort>
+      <AccuracyMedium>0.65</AccuracyMedium>
+      <AccuracyLong>0.35</AccuracyLong>
+      <RangedWeapon_Cooldown>3</RangedWeapon_Cooldown>
+	  <WorkToMake>5000</WorkToMake>
+	  <SellPriceFactor>0.01</SellPriceFactor>
+    </statBases>
+
+    <techLevel>Industrial</techLevel>
+
+    <weaponTags>
+      <li>Gun</li>
+      <li>GunSingleUse</li>
+    </weaponTags>
+
+	<tradeTags>
+      <li>ExoticMisc</li>
+    </tradeTags>
+
+	
+	  <costList>
+      <Steel>10</Steel>
+	  <yy_ammo_rocket>1</yy_ammo_rocket>
+    </costList>
+    <recipeMaker>
+      <skillRequirements>
+        <Crafting>10</Crafting>
+      </skillRequirements>
+	  <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <recipeUsers>
+        <li>TableMachining</li>
+      </recipeUsers>
+      <unfinishedThingDef>UnfinishedGun</unfinishedThingDef>
+      <researchPrerequisite>Gunsmithing</researchPrerequisite>
+    </recipeMaker>
+
+    <thingSetMakerTags>
+      <li>SingleUseWeapon</li>
+      <li>RewardStandardLowFreq</li>
+    </thingSetMakerTags>
+    <verbs>
+      <li>
+        <verbClass>Verb_ShootOneUse</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_AntiArmor_Rocket</defaultProjectile>
+        <forcedMissRadius>1</forcedMissRadius>
+        <warmupTime>3</warmupTime>
+        <ai_AvoidFriendlyFireRadius>5</ai_AvoidFriendlyFireRadius>
+        <range>33.9</range>
+        <ticksBetweenBurstShots>20</ticksBetweenBurstShots>
+        <burstShotCount>1</burstShotCount>
+        <soundCast>InfernoCannon_Fire</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <onlyManualCast>true</onlyManualCast>
+        <stopBurstWithoutLos>false</stopBurstWithoutLos>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+        </targetParams>
+        <muzzleFlashScale>54</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>11.7</power>
+        <cooldownTime>2.6</cooldownTime>
+      </li>
+    </tools>
+    <comps>
+      <li Class="CompProperties_Explosive">
+        <explosiveRadius>1</explosiveRadius>
+        <explosiveDamageType>Bomb</explosiveDamageType>
+        <requiredDamageTypeToExplode>Flame</requiredDamageTypeToExplode>
+      </li>
+    </comps>
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>Gun_EmpLauncher</defName>
+    <label>EMP launcher</label>
+    <description>A wide-barreled EMP shell launcher. The shell will upon impact release a burst of electromagnetic energy, stunning mechanical targets (mechanoids, turrets, mortars) and depleting shields in the area of effect.</description>
+    <graphicData>
+      <texPath>Launchers/M320launcher</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Interact_Rifle</soundInteract>
+		<equippedAngleOffset>45</equippedAngleOffset>
+
+    <generateCommonality>0.3</generateCommonality>
+    <weaponClasses>
+      <li>RangedHeavy</li>
+    </weaponClasses>
+    <weaponTags>
+      <li>GrenadeEMP</li>
+	  <li>ammo_emp/20</li>
+
+    </weaponTags>
+    <statBases>
+      <WorkToMake>30000</WorkToMake>
+      <Mass>3.4</Mass>
+      <RangedWeapon_Cooldown>3.5</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+      <Steel>75</Steel>
+      <ComponentIndustrial>8</ComponentIndustrial>
+    </costList>
+    <recipeMaker>
+      <skillRequirements>
+        <Crafting>8</Crafting>
+      </skillRequirements>
+      <researchPrerequisite>MicroelectronicsBasics</researchPrerequisite>
+    </recipeMaker>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_EMPLauncher</defaultProjectile>
+        <warmupTime>3.5</warmupTime>
+        <range>33.9</range>
+        <forcedMissRadius>1.9</forcedMissRadius>
+        <burstShotCount>1</burstShotCount>
+        <soundCast>Shot_40mm</soundCast>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>14</muzzleFlashScale>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+        </targetParams>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+  <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_EMPLauncher</defName>
+    <label>EMP launcher shell</label>
+    <graphicData>
+      <texPath>Projectiles/GrenadeLauncherShot</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+      <color>(68,150,215)</color>
+    </graphicData>
+    <thingClass>Projectile_Explosive</thingClass>
+    <projectile>
+      <speed>40</speed>
+      <damageDef>EMP</damageDef>
+      <!-- Use default damage from explosion def -->
+      <explosionRadius>1.1</explosionRadius>
+      <ai_IsIncendiary>true</ai_IsIncendiary>
+      <arcHeightFactor>0.2</arcHeightFactor>
+      <shadowSize>0.6</shadowSize>
+    </projectile>
+  </ThingDef>
+  
+    <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>Gun_SmokeLauncher</defName>
+    <label>smoke launcher</label>
+    <description>A wide-barreled smoke shell launcher. The shell will upon impact release a cloud of smoke, obscuring incoming shots and preventing turrets from locking on.</description>
+    <graphicData>
+      <texPath>Launchers/M79launcher</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Interact_Rifle</soundInteract>
+		<equippedAngleOffset>45</equippedAngleOffset>
+
+    <generateCommonality>0.3</generateCommonality>
+    <weaponClasses>
+      <li>RangedHeavy</li>
+    </weaponClasses>
+    <statBases>
+      <WorkToMake>30000</WorkToMake>
+      <Mass>3.4</Mass>
+      <RangedWeapon_Cooldown>4.5</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+      <Steel>75</Steel>
+      <ComponentIndustrial>4</ComponentIndustrial>
+    </costList>
+    <weaponTags Inherit="False">
+      <li>GrenadeSmoke</li>
+	  <li>ammo_he/30</li>
+
+    </weaponTags>
+    <recipeMaker>
+      <skillRequirements>
+        <Crafting>4</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_SmokeLauncher</defaultProjectile>
+        <warmupTime>3.5</warmupTime>
+        <range>33.9</range>
+        <forcedMissRadius>1.9</forcedMissRadius>
+        <burstShotCount>1</burstShotCount>
+        <soundCast>Shot_40mm</soundCast>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>14</muzzleFlashScale>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+        </targetParams>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+  <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_SmokeLauncher</defName>
+    <label>smoke launcher shell</label>
+    <graphicData>
+      <texPath>Projectiles/GrenadeLauncherShot</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+      <color>(140,135,156)</color>
+    </graphicData>
+    <thingClass>Projectile_Explosive</thingClass>
+    <projectile>
+      <speed>40</speed>
+      <damageDef>Smoke</damageDef>
+      <!-- Use default damage from explosion def -->
+      <explosionRadius>2.4</explosionRadius>
+      <postExplosionSpawnThingDef>Gas_Smoke</postExplosionSpawnThingDef>
+      <postExplosionSpawnChance>1</postExplosionSpawnChance>
+      <ai_IsIncendiary>true</ai_IsIncendiary>
+      <arcHeightFactor>0.2</arcHeightFactor>
+      <shadowSize>0.6</shadowSize>
+    </projectile>
+  </ThingDef>
+
+ 
+
+  <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>Gun_IncendiaryLauncher</defName>
+    <label>incendiary launcher</label>
+    <description>A wide-barreled incendiary bolt launcher. The bolts create small incendiary explosions on impact, starting fires.</description>
+    <graphicData>
+      <texPath>Launchers/inceLauncher</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <generateCommonality>0.3</generateCommonality>
+    <weaponClasses>
+      <li>RangedHeavy</li>
+    </weaponClasses>
+	  <weaponTags Inherit="False">
+	  <li>ammo_he/25</li>
+
+    </weaponTags>
+    <statBases>
+      <WorkToMake>20000</WorkToMake>
+      <Mass>3.4</Mass>
+      <RangedWeapon_Cooldown>3.5</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+      <Steel>75</Steel>
+      <ComponentIndustrial>4</ComponentIndustrial>
+    </costList>
+    <recipeMaker>
+      <skillRequirements>
+        <Crafting>4</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_IncendiaryLauncher</defaultProjectile>
+        <warmupTime>3.5</warmupTime>
+        <range>33.9</range>
+        <forcedMissRadius>1.9</forcedMissRadius>
+        <burstShotCount>1</burstShotCount>
+        <soundCast>Shot_40mm</soundCast>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>14</muzzleFlashScale>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+        </targetParams>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+  <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_IncendiaryLauncher</defName>
+    <label>incendiary bolt</label>
+    <graphicData>
+      <texPath>Projectiles/GrenadeLauncherShot</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+      <color>(254,189,58)</color>
+    </graphicData>
+    <thingClass>Projectile_Explosive</thingClass>
+    <projectile>
+      <speed>40</speed>
+      <damageDef>Flame</damageDef>
+      <!-- Use default damage from explosion def -->
+      <explosionRadius>1.1</explosionRadius>
+      <preExplosionSpawnThingDef>Filth_Fuel</preExplosionSpawnThingDef>
+      <preExplosionSpawnChance>0.6</preExplosionSpawnChance>
+      <ai_IsIncendiary>true</ai_IsIncendiary>
+      <arcHeightFactor>0.2</arcHeightFactor>
+      <shadowSize>0.6</shadowSize>
+    </projectile>
+  </ThingDef>
+  
+ 
+ </Defs>
+

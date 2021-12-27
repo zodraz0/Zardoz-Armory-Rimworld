@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+		
+			<!-- ====================== Molotov ====================== -->
+
+		
+		<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName = "Weapon_GrenadeMolotov"]/recipeMaker</xpath>
+				<value>
+					<recipeMaker>
+						<recipeUsers>
+							<li>CraftingSpot</li>
+						</recipeUsers>
+					</recipeMaker>
+				</value>
+			</li>
+
+	<!-- ====================== Replace/add research prerequisite topics ====================== -->
+
+			<!-- <li Class="PatchOperationReplace"> -->
+				<!-- <xpath>Defs/ResearchProjectDef[defName = "Gunsmithing"]/prerequisites</xpath> -->
+				<!-- <value> -->
+					<!-- <prerequisites> -->
+						<!-- <li>Smithing</li> -->
+					<!-- </prerequisites> -->
+				<!-- </value> -->
+			<!-- </li> -->
+			
+			<!-- <li Class="PatchOperationReplace"> -->
+				<!-- <xpath>Defs/ResearchProjectDef[defName = "Gunsmithing"]</xpath> -->
+				<!-- <value> -->
+					<!-- <baseCost> -->
+						<!-- <li>750</li> -->
+					<!-- </baseCost> -->
+				<!-- </value> -->
+			<!-- </li> -->
+			
+			<!-- <li Class="PatchOperationReplace"> -->
+				<!-- <xpath>Defs/ResearchProjectDef[defName = "Machining"]/prerequisites</xpath> -->
+				<!-- <value> -->
+						<!-- <li>Gunsmithing</li> -->
+						<!-- <li>Smithing</li> -->
+				<!-- </value> -->
+			<!-- </li> -->
+			
+
+	<!-- ====================== Add unique weapon tags for bosses ====================== -->
+
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/PawnKindDef[@Name = "MercenaryEliteTierBase"]/weaponTags</xpath>
+				<value>
+					<li>BossGun</li>
+				</value>
+			</li>
+			
+			
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/PawnKindDef[defName = "StrangerInBlack"]/weaponTags</xpath>
+				<value>
+					<li>SIBGun</li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/PawnKindDef[defName = "StrangerInBlack"]/weaponMoney</xpath>
+				<value>
+					<weaponMoney>230~500</weaponMoney>
+				</value>
+			</li>
+			
+			
+	<!-- ====================== Replace workbench descriptions ====================== -->
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName = "FueledSmithy"]/description</xpath>
+				<value>
+					<description>A wood-fueled station for smithing simple mechanical weapons and tools.</description>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName = "ElectricSmithy"]/description</xpath>
+				<value>
+					<description>An electric-powered station for smithing simple mechanical weapons and tools.</description>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName = "TableMachining"]/description</xpath>
+				<value>
+					<description>A work station for machining items that require stronger steel or tighter tolerences, or breaking down dead mechanoids.</description>
+				</value>
+			</li>
+
+<!-- ====================== Charge Lance edits ====================== -->
+
+			<li Class="PatchOperationAttributeSet">
+				<xpath>Defs/ThingDef[defName = "Gun_ChargeLance"]</xpath>
+				<attribute>ParentName</attribute>
+				<value>BaseGunWithQuality</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName = "Gun_ChargeLance"]</xpath>
+				<value>
+					<destroyOnDrop>true</destroyOnDrop>
+					<tradeability>None</tradeability>
+				</value>
+			</li>
+			<li Class="PatchOperationRemove">
+				<xpath>Defs/ThingDef[defName = "Gun_ChargeLance"]/statBases/WorkToMake</xpath>
+			</li>
+			<li Class="PatchOperationRemove">
+				<xpath>Defs/ThingDef[defName = "Gun_ChargeLance"]/recipeMaker</xpath>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName = "Gun_ChargeLance"]/weaponTags</xpath>
+				<value>
+					<weaponTags>
+						<li>MechanoidGunMedium</li>
+					</weaponTags>
+				</value>
+			</li>
+			
+			
+	<!-- ====================== Flak Vest edits ====================== -->
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName = "Apparel_FlakVest"]/label</xpath>
+				<value>
+					<label>plate vest</label>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName = "Apparel_FlakVest"]/description</xpath>
+				<value>
+					<description>A couple of armor plates, held in place by straps. Incredibly crude, but better than nothing.</description>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName = "Apparel_FlakVest"]/recipeMaker</xpath>
+				<value>
+					<recipeMaker>
+						<researchPrerequisite>PlateArmor</researchPrerequisite>
+						<unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
+						<recipeUsers>
+							<li>ElectricSmithy</li>
+							<li>FueledSmithy</li>
+							<li>TableMachining</li>
+						</recipeUsers>
+					</recipeMaker>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName = "Apparel_FlakVest"]/statBases</xpath>
+				<value>
+				    <statBases>
+						<WorkToMake>6000</WorkToMake>
+						<MaxHitPoints>200</MaxHitPoints>
+						<Mass>10</Mass>
+						<Flammability>0.6</Flammability>
+						<ArmorRating_Sharp>0.60</ArmorRating_Sharp>
+						<ArmorRating_Blunt>0.36</ArmorRating_Blunt>
+						<ArmorRating_Heat>0.27</ArmorRating_Heat>
+						<Insulation_Cold>1</Insulation_Cold>
+						<EquipDelay>5</EquipDelay>
+					</statBases>
+				</value>
+			</li>
+			<!--li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName = "Apparel_FlakVest"]</xpath>
+				<value>
+					<stuffCategories>
+						<li>Metallic</li>
+					</stuffCategories>
+					<costStuffCount>60</costStuffCount>
+				</value>
+			</li-->
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName = "Apparel_FlakVest"]/costList</xpath>
+				<value>
+					<costList>
+						<Cloth>8</Cloth>
+						<Steel>60</Steel>
+					</costList>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName = "Apparel_FlakVest"]/equippedStatOffsets/MoveSpeed</xpath>
+				<value>
+					<MoveSpeed>-0.08</MoveSpeed>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName = "Apparel_FlakVest"]/apparel/bodyPartGroups</xpath>
+				<value>
+					<bodyPartGroups>
+						<li>Torso</li>
+					</bodyPartGroups>
+				</value>
+			</li>
+
+	<!-- ====================== Scenario edit ====================== -->
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ScenarioDef[defName = "Crashlanded"]/scenario/parts</xpath>
+				<value>
+					<parts>
+						<li Class="ScenPart_ConfigPage_ConfigureStartingPawns">
+							<def>ConfigPage_ConfigureStartingPawns</def>
+							<pawnCount>3</pawnCount>
+							<pawnChoiceCount>8</pawnChoiceCount>
+						</li>
+						<li Class="ScenPart_PlayerPawnsArriveMethod">
+							<def>PlayerPawnsArriveMethod</def>
+							<method>DropPods</method>
+							<visible>false</visible>
+						</li>
+						<li Class="ScenPart_ForcedHediff">
+							<def>ForcedHediff</def>
+							<visible>false</visible>
+							<context>PlayerStarter</context>
+							<chance>0.5</chance>
+							<hediff>CryptosleepSickness</hediff>
+							<hideOffMap>true</hideOffMap>
+							<severityRange>
+								<min>1</min>
+								<max>1</max>
+							</severityRange>
+						</li>
+						<li Class="ScenPart_StartingThing_Defined">
+							<def>StartingThing_Defined</def>
+							<thingDef>Silver</thingDef>
+							<count>800</count>
+						</li>
+						<li Class="ScenPart_StartingThing_Defined">
+							<def>StartingThing_Defined</def>
+							<thingDef>MealSurvivalPack</thingDef>
+							<count>50</count>
+						</li>
+						<li Class="ScenPart_StartingThing_Defined">
+							<def>StartingThing_Defined</def>
+							<thingDef>MedicineIndustrial</thingDef>
+							<count>30</count>
+						</li>
+						<li Class="ScenPart_StartingThing_Defined">
+							<def>StartingThing_Defined</def>
+							<thingDef>ComponentIndustrial</thingDef>
+							<count>30</count>
+						</li>
+						<li Class="ScenPart_StartingThing_Defined">
+							<def>StartingThing_Defined</def>
+							<thingDef>Gun_BoltActionRifle</thingDef>
+						</li>
+							<li Class="ScenPart_StartingThing_Defined">
+							<def>StartingThing_Defined</def>
+							<thingDef>yy_ammo_rifle</thingDef>
+							<count>100</count>
+						</li>
+						<li Class="ScenPart_StartingThing_Defined">
+							<def>StartingThing_Defined</def>
+							<thingDef>Gun_Revolver</thingDef>
+						</li>
+						<li Class="ScenPart_StartingThing_Defined">
+							<def>StartingThing_Defined</def>
+							<thingDef>yy_ammo_pistol</thingDef>
+							<count>100</count>
+						</li>
+						<li Class="ScenPart_StartingThing_Defined">
+							<def>StartingThing_Defined</def>
+							<thingDef>MeleeWeapon_Knife</thingDef>
+							<stuff>Plasteel</stuff>
+						</li>
+						<li Class="ScenPart_StartingThing_Defined">
+							<def>StartingThing_Defined</def>
+							<thingDef>Apparel_FlakPants</thingDef>
+						</li>
+						<li Class="ScenPart_StartingThing_Defined">
+							<def>StartingThing_Defined</def>
+							<thingDef>Apparel_FlakVest</thingDef>
+						</li>
+						<li Class="ScenPart_StartingThing_Defined">
+							<def>StartingThing_Defined</def>
+							<thingDef>Apparel_AdvancedHelmet</thingDef>
+							<stuff>Plasteel</stuff>
+						</li>
+						<li Class="ScenPart_StartingAnimal">
+							<def>StartingAnimal</def>
+							<count>1</count>
+							<bondToRandomPlayerPawnChance>1.0</bondToRandomPlayerPawnChance>
+						</li>
+						<li Class="ScenPart_ScatterThingsNearPlayerStart">
+							<def>ScatterThingsNearPlayerStart</def>
+							<thingDef>Steel</thingDef>
+							<count>450</count>
+						</li>
+						<li Class="ScenPart_ScatterThingsNearPlayerStart">
+							<def>ScatterThingsNearPlayerStart</def>
+							<thingDef>WoodLog</thingDef>
+							<count>300</count>
+						</li>
+						<li Class="ScenPart_ScatterThingsAnywhere">
+							<def>ScatterThingsAnywhere</def>
+							<thingDef>ShipChunk</thingDef>
+							<count>3</count>
+						</li>
+						<li Class="ScenPart_ScatterThingsAnywhere">
+							<def>ScatterThingsAnywhere</def>
+							<thingDef>Steel</thingDef>
+							<count>720</count>
+						</li>
+						<li Class="ScenPart_ScatterThingsAnywhere">
+							<def>ScatterThingsAnywhere</def>
+							<thingDef>MealSurvivalPack</thingDef>
+							<count>7</count>
+						</li>
+						<li Class="ScenPart_GameStartDialog">
+							<def>GameStartDialog</def>
+							<textKey>GameStartDialog</textKey>
+							<closeSound>GameStartSting</closeSound>
+						</li>
+					</parts>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+
+</Patch>

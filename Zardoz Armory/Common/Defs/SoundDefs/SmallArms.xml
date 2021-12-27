@@ -1,0 +1,577 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <SoundDef>
+    <defName>5.56rifle_shot</defName>  
+    <context>MapOnly</context>
+    <eventNames />
+    <subSounds>
+      <li>   
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>SmallArms/5.56rifle_shot</clipFolderPath>
+            </li>
+        </grains>      
+        <volumeRange>
+          <min>60</min>
+          <max>60</max>
+        </volumeRange>
+        <pitchRange>
+          <min>0.9</min>
+          <max>1.1</max>
+        </pitchRange>
+        <distRange>
+          <min>0</min>
+          <max>70</max>
+        </distRange>
+      </li>    
+    </subSounds>
+  </SoundDef>
+    
+	<SoundDef>
+    <defName>5.56lmg_shot</defName>  
+    <context>MapOnly</context>
+    <eventNames />
+    <subSounds>
+      <li>   
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>SmallArms/5.56lmg_shot</clipFolderPath>
+            </li>
+        </grains>      
+        <volumeRange>
+          <min>45</min>
+          <max>45</max>
+        </volumeRange>
+        <pitchRange>
+          <min>0.9</min>
+          <max>1.1</max>
+        </pitchRange>
+        <distRange>
+          <min>0</min>
+          <max>70</max>
+        </distRange>
+      </li>    
+    </subSounds>
+  </SoundDef>
+  
+  <SoundDef>
+    <defName>7.62rifle_shot</defName>  
+    <context>MapOnly</context>
+    <eventNames />
+    <subSounds>
+      <li>   
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>SmallArms/7.62rifle_shot</clipFolderPath>
+            </li>
+        </grains>      
+        <volumeRange>
+          <min>45</min>
+          <max>45</max>
+        </volumeRange>
+        <pitchRange>
+          <min>0.9</min>
+          <max>1.1</max>
+        </pitchRange>
+        <distRange>
+          <min>0</min>
+          <max>70</max>
+        </distRange>
+      </li>    
+    </subSounds>
+  </SoundDef>
+  
+  	<SoundDef>
+    <defName>3006rifle_shot</defName>  
+    <context>MapOnly</context>
+    <eventNames />
+    <subSounds>
+      <li>   
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>SmallArms/3006rifle_shot</clipFolderPath>
+            </li>
+        </grains>      
+        <volumeRange>
+          <min>60</min>
+          <max>60</max>
+        </volumeRange>
+        <pitchRange>
+          <min>0.9</min>
+          <max>1.1</max>
+        </pitchRange>
+        <distRange>
+          <min>0</min>
+          <max>70</max>
+        </distRange>
+      </li>    
+    </subSounds>
+  </SoundDef>
+    
+	<SoundDef>
+    <defName>7.62lmg_shot</defName>  
+    <context>MapOnly</context>
+    <eventNames />
+    <subSounds>
+      <li>   
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>SmallArms/7.62lmg_shot</clipFolderPath>
+            </li>
+        </grains>      
+        <volumeRange>
+          <min>35</min>
+          <max>35</max>
+        </volumeRange>
+        <pitchRange>
+          <min>0.9</min>
+          <max>1.1</max>
+        </pitchRange>
+        <distRange>
+          <min>0</min>
+          <max>70</max>
+        </distRange>
+      </li>    
+    </subSounds>
+  </SoundDef>
+   
+   	<SoundDef>
+    <defName>9mmpistol_shot</defName>  
+    <context>MapOnly</context>
+    <eventNames />
+    <subSounds>
+      <li>   
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>SmallArms/9mmpistol_shot</clipFolderPath>
+            </li>
+        </grains>      
+        <volumeRange>
+          <min>60</min>
+          <max>60</max>
+        </volumeRange>
+        <pitchRange>
+          <min>0.9</min>
+          <max>1.1</max>
+        </pitchRange>
+        <distRange>
+          <min>0</min>
+          <max>70</max>
+        </distRange>
+      </li>    
+    </subSounds>
+  </SoundDef>
+ 
+   	<SoundDef>
+    <defName>9mmsmg_shot</defName>  
+    <context>MapOnly</context>
+    <eventNames />
+    <subSounds>
+      <li>   
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>SmallArms/9mmsmg_shot</clipFolderPath>
+            </li>
+        </grains>      
+        <volumeRange>
+          <min>45</min>
+          <max>45</max>
+        </volumeRange>
+        <pitchRange>
+          <min>0.9</min>
+          <max>1.1</max>
+        </pitchRange>
+        <distRange>
+          <min>0</min>
+          <max>70</max>
+        </distRange>
+      </li>    
+    </subSounds>
+  </SoundDef>
+  
+    <SoundDef>
+    <defName>5.7mmsmg_shot</defName>  
+    <context>MapOnly</context>
+    <eventNames />
+    <subSounds>
+      <li>   
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>SmallArms/5.7mmsmg_shot</clipFolderPath>
+            </li>
+        </grains>      
+        <volumeRange>
+          <min>45</min>
+          <max>45</max>
+        </volumeRange>
+        <pitchRange>
+          <min>0.9</min>
+          <max>1.1</max>
+        </pitchRange>
+        <distRange>
+          <min>0</min>
+          <max>70</max>
+        </distRange>
+      </li>    
+    </subSounds>
+  </SoundDef>
+  
+   <SoundDef>
+    <defName>ak47_shot</defName>  
+    <context>MapOnly</context>
+    <eventNames />
+    <subSounds>
+      <li>   
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>SmallArms/ak47_shot</clipFolderPath>
+            </li>
+        </grains>      
+        <volumeRange>
+          <min>45</min>
+          <max>45</max>
+        </volumeRange>
+        <pitchRange>
+          <min>0.9</min>
+          <max>1.1</max>
+        </pitchRange>
+        <distRange>
+          <min>0</min>
+          <max>70</max>
+        </distRange>
+      </li>    
+    </subSounds>
+  </SoundDef>
+  
+  
+   <SoundDef>
+    <defName>ak74_shot</defName>  
+    <context>MapOnly</context>
+    <eventNames />
+    <subSounds>
+      <li>   
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>SmallArms/ak74_shot</clipFolderPath>
+            </li>
+        </grains>      
+        <volumeRange>
+          <min>45</min>
+          <max>45</max>
+        </volumeRange>
+        <pitchRange>
+          <min>0.9</min>
+          <max>1.1</max>
+        </pitchRange>
+        <distRange>
+          <min>0</min>
+          <max>70</max>
+        </distRange>
+      </li>    
+    </subSounds>
+  </SoundDef>
+  
+     <SoundDef>
+    <defName>ak74u_shot</defName>  
+    <context>MapOnly</context>
+    <eventNames />
+    <subSounds>
+      <li>   
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>SmallArms/ak74u_shot</clipFolderPath>
+            </li>
+        </grains>      
+        <volumeRange>
+          <min>45</min>
+          <max>45</max>
+        </volumeRange>
+        <pitchRange>
+          <min>0.9</min>
+          <max>1.1</max>
+        </pitchRange>
+        <distRange>
+          <min>0</min>
+          <max>70</max>
+        </distRange>
+      </li>    
+    </subSounds>
+  </SoundDef>
+  
+  
+  
+    <SoundDef>
+    <defName>12g_shot</defName>  
+    <context>MapOnly</context>
+    <eventNames />
+    <subSounds>
+      <li>   
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>SmallArms/12g_shot</clipFolderPath>
+            </li>
+        </grains>      
+        <volumeRange>
+          <min>60</min>
+          <max>60</max>
+        </volumeRange>
+        <pitchRange>
+          <min>0.9</min>
+          <max>1.1</max>
+        </pitchRange>
+        <distRange>
+          <min>0</min>
+          <max>70</max>
+        </distRange>
+      </li>    
+    </subSounds>
+  </SoundDef>
+  
+  <SoundDef>
+    <defName>AMR_shot</defName>  
+    <context>MapOnly</context>
+    <eventNames />
+    <subSounds>
+      <li>   
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>BigArms/AMR_shot</clipFolderPath>
+            </li>
+        </grains>      
+        <volumeRange>
+          <min>100</min>
+          <max>100</max>
+        </volumeRange>
+        <pitchRange>
+          <min>0.9</min>
+          <max>1.1</max>
+        </pitchRange>
+        <distRange>
+          <min>0</min>
+          <max>70</max>
+        </distRange>
+      </li>    
+    </subSounds>
+  </SoundDef>
+  
+  
+  <SoundDef>
+    <defName>50HMG_shot</defName>  
+    <context>MapOnly</context>
+    <eventNames />
+    <subSounds>
+      <li>   
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>BigArms/m2hb_shot</clipFolderPath>
+            </li>
+        </grains>      
+        <volumeRange>
+          <min>66</min>
+          <max>66</max>
+        </volumeRange>
+        <pitchRange>
+          <min>0.9</min>
+          <max>1.1</max>
+        </pitchRange>
+        <distRange>
+          <min>0</min>
+          <max>70</max>
+        </distRange>
+      </li>    
+    </subSounds>
+  </SoundDef>
+  
+ 
+  <SoundDef>
+    <defName>12g_pump_shot</defName>
+    <context>MapOnly</context>
+    <eventNames />
+    <subSounds>
+     <li>   
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>SmallArms/12g_shot</clipFolderPath>
+            </li>
+        </grains>      
+        <volumeRange>
+          <min>55</min>
+          <max>55</max>
+        </volumeRange>
+        <pitchRange>
+          <min>0.9</min>
+          <max>1.1</max>
+        </pitchRange>
+        <distRange>
+          <min>0</min>
+          <max>70</max>
+        </distRange>
+      </li>    
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Interactions/shotgun_pump</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>
+          <min>55</min>
+          <max>55</max>
+        </volumeRange>
+        <pitchRange>
+          <min>0.9</min>
+          <max>1.1</max>
+        </pitchRange>
+        <distRange>
+          <min>0</min>
+          <max>35</max>
+        </distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  <SoundDef>
+    <defName>revolver_shot</defName>  
+    <context>MapOnly</context>
+    <eventNames />
+    <subSounds>
+      <li>   
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>SmallArms/revolver_shot</clipFolderPath>
+            </li>
+        </grains>      
+        <volumeRange>
+          <min>60</min>
+          <max>60</max>
+        </volumeRange>
+        <pitchRange>
+          <min>0.9</min>
+          <max>1.1</max>
+        </pitchRange>
+        <distRange>
+          <min>0</min>
+          <max>70</max>
+        </distRange>
+      </li> 
+	        <li>   
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Interactions/revolver_hammer</clipFolderPath>
+            </li>
+        </grains>      
+        <volumeRange>
+          <min>60</min>
+          <max>60</max>
+        </volumeRange>
+        <pitchRange>
+          <min>0.9</min>
+          <max>1.1</max>
+        </pitchRange>
+        <distRange>
+          <min>0</min>
+          <max>35</max>
+        </distRange>
+      </li> 
+	</subSounds>
+
+  </SoundDef>
+  
+  <SoundDef>
+    <defName>lever_shot</defName>  
+    <context>MapOnly</context>
+    <eventNames />
+    <subSounds>
+      <li>   
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>SmallArms/revolver_shot</clipFolderPath>
+            </li>
+        </grains>      
+        <volumeRange>
+          <min>60</min>
+          <max>60</max>
+        </volumeRange>
+        <pitchRange>
+          <min>0.9</min>
+          <max>1.1</max>
+        </pitchRange>
+        <distRange>
+          <min>0</min>
+          <max>70</max>
+        </distRange>
+      </li> 
+	        <li>   
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Interactions/lever_cycle</clipFolderPath>
+            </li>
+        </grains>      
+        <volumeRange>
+          <min>45</min>
+          <max>45</max>
+        </volumeRange>
+        <pitchRange>
+          <min>0.9</min>
+          <max>1.1</max>
+        </pitchRange>
+        <distRange>
+          <min>0</min>
+          <max>35</max>
+        </distRange>
+      </li> 
+	</subSounds>
+	
+</SoundDef>
+
+	
+	 <SoundDef>
+    <defName>bolt_shot</defName>  
+    <context>MapOnly</context>
+    <eventNames />
+    <subSounds>
+      <li>   
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>SmallArms/3006rifle_shot</clipFolderPath>
+            </li>
+        </grains>      
+        <volumeRange>
+          <min>60</min>
+          <max>60</max>
+        </volumeRange>
+        <pitchRange>
+          <min>0.9</min>
+          <max>1.1</max>
+        </pitchRange>
+        <distRange>
+          <min>0</min>
+          <max>70</max>
+        </distRange>
+      </li> 
+	        <li>   
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Interactions/bolt_action</clipFolderPath>
+            </li>
+        </grains>      
+        <volumeRange>
+          <min>60</min>
+          <max>60</max>
+        </volumeRange>
+        <pitchRange>
+          <min>0.9</min>
+          <max>1.1</max>
+        </pitchRange>
+        <distRange>
+          <min>0</min>
+          <max>35</max>
+        </distRange>
+      </li> 
+	</subSounds>
+
+
+  </SoundDef>
+  
+  
+ </Defs>

@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingDef ParentName="BaseBullet">
+		<defName>Bullet_RifleBase</defName>
+		<label>rifle bullet</label>
+		<graphicData>
+			<texPath>Things/Projectile/Bullet_Small</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile>
+			<damageDef>Bullet</damageDef>
+			<damageAmountBase>17</damageAmountBase>
+			<armorPenetrationBase>0.35</armorPenetrationBase>
+			<stoppingPower>1.2</stoppingPower>
+			<speed>100</speed>
+		</projectile>
+	</ThingDef>
+
+  <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>Gun_BattleRifle</defName>
+    <label>battle rifle</label>
+    <description>Semi-Auto Rifle firing hard hitting rifle ammunition. Good for mid to long range combat.\n\nThought to been made obsolete by the advent of the Assault Rifle, these weapons made their return due to the proliferation composite body armor.</description>
+    <techLevel>Industrial</techLevel>
+    <smeltable>true</smeltable>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <texPath>BattleRifles/AR10rifle</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <drawSize>1.05</drawSize>
+    </graphicData>
+	<equippedAngleOffset>45</equippedAngleOffset>
+	<soundInteract>m16_rack</soundInteract>
+   <thingSetMakerTags><li>RewardStandardQualitySuper</li></thingSetMakerTags>
+   	<recipeMaker>
+	
+		<researchPrerequisite>GasOperation</researchPrerequisite>
+	
+	<skillRequirements>
+			<Crafting>8</Crafting>
+	</skillRequirements>
+	</recipeMaker>
+    <statBases>
+      <WorkToMake>50000</WorkToMake>
+      <Mass>4.5</Mass>
+      <AccuracyTouch>0.50</AccuracyTouch>
+      <AccuracyShort>0.75</AccuracyShort>
+      <AccuracyMedium>0.80</AccuracyMedium>
+      <AccuracyLong>0.75</AccuracyLong>
+      <RangedWeapon_Cooldown>0.8</RangedWeapon_Cooldown>
+    </statBases>
+	<costList>
+		<Steel>80</Steel>
+		<ComponentIndustrial>6</ComponentIndustrial>
+	</costList>
+    <weaponTags>
+	      <li>AssaultRifle</li>
+		<li>IndustrialGunAdvanced</li>
+		<li>ammo_rifle/80</li>
+	</weaponTags>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_RifleBase</defaultProjectile>
+        <warmupTime>1.5</warmupTime>
+        <range>37.9</range>
+        <soundCast>7.62rifle_shot</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>12</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>10</power>
+        <cooldownTime>2.3</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseGunWithQuality">
+    <defName>Gun_BushRifle</defName>
+    <label>bush rifle</label>
+    <description>Semi-Auto Rifle firing hard hitting rifle ammunition. Good for mid to long range combat. It appears to have been smeared with baby poop.\n\nOnce called the Right Arm of the Free World.</description>
+    <techLevel>Industrial</techLevel>
+    <smeltable>true</smeltable>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <texPath>BattleRifles/Rhodierifle</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <drawSize>1.0</drawSize>
+    </graphicData>
+	<equippedAngleOffset>45</equippedAngleOffset>
+	<soundInteract>m16_rack</soundInteract>
+   <thingSetMakerTags><li>RewardStandardQualitySuper</li></thingSetMakerTags>
+    <statBases>
+      <WorkToMake>60000</WorkToMake>
+      <Mass>4.5</Mass>
+      <AccuracyTouch>0.50</AccuracyTouch>
+      <AccuracyShort>0.75</AccuracyShort>
+      <AccuracyMedium>0.80</AccuracyMedium>
+      <AccuracyLong>0.75</AccuracyLong>
+      <RangedWeapon_Cooldown>0.7</RangedWeapon_Cooldown>
+    </statBases>
+    <weaponTags>
+	      <li>AssaultRifle</li>
+		<li>IndustrialGunAdvanced</li>
+		<li>ammo_rifle/80</li>
+	</weaponTags>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_RifleBase</defaultProjectile>
+        <warmupTime>1.4</warmupTime>
+        <range>37.9</range>
+        <soundCast>7.62rifle_shot</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>12</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>10</power>
+        <cooldownTime>2.3</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+  
+  
+  <ThingDef ParentName="BaseGunWithQuality">
+    <defName>Gun_HeavyCombatRifle</defName>
+    <label>heavy counter assault rifle</label>
+    <description>A old repurposed design firing rifle caliber rounds in 2 round bursts.\n\nHard hitting.</description>
+    <techLevel>Industrial</techLevel>
+    <smeltable>true</smeltable>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <texPath>BattleRifles/HCARrifle</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <drawSize>1.0</drawSize>
+    </graphicData>
+	<equippedAngleOffset>45</equippedAngleOffset>
+	<soundInteract>m16_rack</soundInteract>
+   <thingSetMakerTags><li>RewardStandardQualitySuper</li></thingSetMakerTags>
+    <statBases>
+      <WorkToMake>72000</WorkToMake>
+      <Mass>4.5</Mass>
+       <AccuracyTouch>0.60</AccuracyTouch>
+       <AccuracyShort>0.70</AccuracyShort>
+       <AccuracyMedium>0.63</AccuracyMedium>
+      <AccuracyLong>0.75</AccuracyLong>
+      <RangedWeapon_Cooldown>0.7</RangedWeapon_Cooldown>
+    </statBases>
+    <weaponTags>
+	    <li>AssaultRifle</li>
+		<li>IndustrialGunAdvanced</li>
+		<li>ammo_rifle/120</li>
+	</weaponTags>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_RifleBase</defaultProjectile>
+        <warmupTime>1.4</warmupTime>
+        <range>33.9</range>
+		<burstShotCount>2</burstShotCount>
+        <ticksBetweenBurstShots>7</ticksBetweenBurstShots>
+        <soundCast>3006rifle_shot</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>12</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>10</power>
+        <cooldownTime>2.3</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+  
+
+ </Defs>
+

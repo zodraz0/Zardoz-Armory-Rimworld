@@ -1,0 +1,283 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<ThingDef ParentName="BaseBullet">
+		<defName>Bullet_RifleZulu</defName>
+		<label>rifle bullet</label>
+		<graphicData>
+			<texPath>Things/Projectile/Bullet_Small</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile>
+			<damageDef>Bullet</damageDef>
+			<damageAmountBase>22</damageAmountBase>
+			<armorPenetrationBase>0.19</armorPenetrationBase>
+			<stoppingPower>1.4</stoppingPower>
+			<speed>65</speed>
+		</projectile>
+	</ThingDef>
+		<ThingDef ParentName="BaseBullet">
+		<defName>Bullet_RifleBolt</defName>
+		<label>rifle bullet</label>
+		<graphicData>
+			<texPath>Things/Projectile/Bullet_Small</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile>
+			<damageDef>Bullet</damageDef>
+			<damageAmountBase>18</damageAmountBase>
+			<armorPenetrationBase>0.28</armorPenetrationBase>
+			<stoppingPower>1.4</stoppingPower>
+			<speed>65</speed>
+		</projectile>
+	</ThingDef>
+		
+		<ThingDef ParentName="BaseBullet">
+		<defName>Bullet_RifleLever</defName>
+		<label>rifle bullet</label>
+		<graphicData>
+			<texPath>Things/Projectile/Bullet_Small</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile>
+			<damageDef>Bullet</damageDef>
+			<damageAmountBase>14</damageAmountBase>
+			<armorPenetrationBase>0.18</armorPenetrationBase>
+			<stoppingPower>1.4</stoppingPower>
+			<speed>85</speed>
+		</projectile>
+	</ThingDef>
+	
+	<ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>Gun_ZuluRifle</defName>
+    <label>breech-loading rifle</label>
+    <description>Single shot breech-loading rifle.\n\nOlder than the bolt action but don't let it's age fool you. It'll still stop a Muffalo dead in it's tracks.</description>
+    <graphicData>
+      <texPath>Rifles/Zulurifle</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Interact_Rifle</soundInteract>
+	<weaponClasses>
+      <li>LongShots</li>
+		<li>Ranged</li>
+    </weaponClasses>
+		<equippedAngleOffset>45</equippedAngleOffset>
+
+    <statBases>
+      <MarketValue>150</MarketValue>
+      <WorkToMake>28000</WorkToMake>
+	  <Mass>3.8</Mass>
+      <AccuracyTouch>0.65</AccuracyTouch>
+      <AccuracyShort>0.80</AccuracyShort>
+      <AccuracyMedium>0.86</AccuracyMedium>
+      <AccuracyLong>0.90</AccuracyLong>
+      <RangedWeapon_Cooldown>2.5</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+      <Steel>20</Steel>
+	  <WoodLog>10</WoodLog>
+	  <ComponentIndustrial>2</ComponentIndustrial>
+    </costList>
+    
+	<recipeMaker>
+	  <researchPrerequisite>Smithing</researchPrerequisite> 
+      <skillRequirements>
+        <Crafting>4</Crafting>
+      </skillRequirements>
+	  <recipeUsers>
+        <li>ElectricSmithy</li>
+        <li>FueledSmithy</li>
+      </recipeUsers>
+    </recipeMaker>
+	
+	<weaponTags>
+		<li>ammo_rifle/30</li>
+		<li>NeolithicRangedHeavy</li>
+		<li>NeolithicRangedChief</li>
+    </weaponTags>
+	
+	<verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_RifleZulu</defaultProjectile>
+        <warmupTime>1.3</warmupTime>
+        <range>39.9</range>
+        <soundCast>3006rifle_shot</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>12</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+  
+    <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>Gun_BoltActionRifle</defName>
+    <label>bolt-action rifle</label>
+    <description>An ancient pattern bolt-action rifle. With its long range, and low fire rate, it is unlikely to drive animals to revenge, which makes it a favorite weapon for hunting.</description>
+    <graphicData>
+      <texPath>Rifles/No4rifle</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <weaponClasses>
+      <li>LongShots</li>
+	  <li>Ranged</li>
+    </weaponClasses>
+		<equippedAngleOffset>45</equippedAngleOffset>
+
+    <statBases>
+	   <MarketValue>275</MarketValue>
+      <WorkToMake>30000</WorkToMake>
+      <Mass>3.5</Mass>
+      <AccuracyTouch>0.65</AccuracyTouch>
+      <AccuracyShort>0.80</AccuracyShort>
+      <AccuracyMedium>0.90</AccuracyMedium>
+      <AccuracyLong>0.80</AccuracyLong>
+      <RangedWeapon_Cooldown>1.6</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+      <Steel>30</Steel>
+	  <WoodLog>10</WoodLog>
+      <ComponentIndustrial>3</ComponentIndustrial>
+    </costList>
+    <recipeMaker>
+	  <researchPrerequisite>Gunsmithing</researchPrerequisite> 
+      <skillRequirements>
+        <Crafting>5</Crafting>
+      </skillRequirements>
+	  <recipeUsers>
+        <li>ElectricSmithy</li>
+        <li>FueledSmithy</li>
+      </recipeUsers>
+    </recipeMaker>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_RifleBolt</defaultProjectile>
+        <warmupTime>1.7</warmupTime>
+        <range>36.9</range>
+        <soundCast>bolt_shot</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+  
+ <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>Gun_LeverActionRifle</defName>
+    <label>lever-action rifle</label>
+    <description>Yeehaw. Fires Pistol cartridges.</description>
+    <graphicData>
+      <texPath>Rifles/Henryrifle</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <weaponClasses>
+      <li>LongShots</li>
+	  <li>Ranged</li>
+    </weaponClasses>
+		<equippedAngleOffset>45</equippedAngleOffset>
+
+    <statBases>
+	  <MarketValue>300</MarketValue>
+      <WorkToMake>30000</WorkToMake>
+      <Mass>3.5</Mass>
+      <AccuracyTouch>0.65</AccuracyTouch>
+      <AccuracyShort>0.70</AccuracyShort>
+      <AccuracyMedium>0.75</AccuracyMedium>
+      <AccuracyLong>0.60</AccuracyLong>
+      <RangedWeapon_Cooldown>0.8</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+      <Steel>35</Steel>
+	  <WoodLog>10</WoodLog>
+      <ComponentIndustrial>4</ComponentIndustrial>
+    </costList>
+    <recipeMaker>
+	  <researchPrerequisite>Gunsmithing</researchPrerequisite> 
+      <skillRequirements>
+        <Crafting>5</Crafting>
+      </skillRequirements>
+	  <recipeUsers>
+        <li>ElectricSmithy</li>
+        <li>FueledSmithy</li>
+      </recipeUsers>
+    </recipeMaker>
+	<weaponTags>
+		<li>SIBGun</li>
+		<li>ammo_pistol/100</li>
+		<li>NeolithicRangedHeavy</li>
+		<li>NeolithicRangedChief</li>
+    </weaponTags>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_RifleLever</defaultProjectile>
+        <warmupTime>1.4</warmupTime>
+        <range>27.9</range>
+        <soundCast>lever_shot</soundCast>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+  
+</Defs>
+

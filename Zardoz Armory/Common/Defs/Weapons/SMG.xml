@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingDef ParentName="BaseBullet">
+		<defName>Bullet_SMG</defName>
+		<label>pistol bullet</label>
+		<graphicData>
+			<texPath>Things/Projectile/Bullet_Small</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile>
+			<damageDef>Bullet</damageDef>
+			<damageAmountBase>11</damageAmountBase>
+			<armorPenetrationBase>0.19</armorPenetrationBase>
+			<stoppingPower>1.2</stoppingPower>
+			<speed>65</speed>
+		</projectile>
+	</ThingDef>
+	
+	<ThingDef ParentName="BaseBullet">
+		<defName>Bullet_PDW</defName>
+		<label>pistol bullet</label>
+		<graphicData>
+			<texPath>Things/Projectile/Bullet_Small</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile>
+			<damageDef>Bullet</damageDef>
+			<damageAmountBase>6</damageAmountBase>
+			<armorPenetrationBase>0.28</armorPenetrationBase>
+			<stoppingPower>0.7</stoppingPower>
+			<speed>85</speed>
+		</projectile>
+	</ThingDef>
+  
+  <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>Gun_HeavySMG</defName>
+    <label>Submachine Gun</label>
+    <description>Roller Delayed Blowback submachine gun firing pistol caliber cartridges. Close second to the shotgun for dominance in close quarters combat.</description>
+    <graphicData>
+      <texPath>SMGs/mp5smg</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  	  <drawSize>0.6</drawSize>
+
+    </graphicData>
+    <uiIconScale>1.4</uiIconScale>
+    <soundInteract>Interact_SMG</soundInteract>
+    <weaponClasses>
+      <li>ShortShots</li>
+	        <li>RangedHeavy</li>
+
+    </weaponClasses>
+	<equippedAngleOffset>45</equippedAngleOffset>
+
+    <recipeMaker>
+      <researchPrerequisite>BlowbackOperation</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>6</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+    <statBases>
+	  <MarketValue>300</MarketValue>
+      <WorkToMake>35000</WorkToMake>
+      <Mass>3.2</Mass>
+      <AccuracyTouch>0.76</AccuracyTouch>
+      <AccuracyShort>0.72</AccuracyShort>
+      <AccuracyMedium>0.35</AccuracyMedium>
+      <AccuracyLong>0.15</AccuracyLong>
+      <RangedWeapon_Cooldown>1.6</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+      <Steel>45</Steel>
+      <ComponentIndustrial>3</ComponentIndustrial>
+    </costList>
+	
+	<weaponTags>
+			<li>IndustrialGunAdvanced</li>
+			<li>ammo_pistol/180</li>
+    </weaponTags>
+
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_SMG</defaultProjectile>
+        <warmupTime>0.8</warmupTime>
+        <range>25.9</range>
+        <burstShotCount>5</burstShotCount>
+        <ticksBetweenBurstShots>4</ticksBetweenBurstShots>
+        <soundCast>9mmsmg_shot</soundCast>
+        <soundCastTail>GunTail_Light</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>grip</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>Gun_PDW</defName>
+    <label>Personal Defense Weapon</label>
+    <description>Personal Defense Weapon, firing small pistol caliber cartridges designed for armor penetration rather than flesh damage.</description>
+    <graphicData>
+      <texPath>SMGs/P90smg</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <drawSize>0.7</drawSize>
+
+    </graphicData>
+    <uiIconScale>1.4</uiIconScale>
+    <soundInteract>Interact_SMG</soundInteract>
+	<equippedAngleOffset>45</equippedAngleOffset>
+
+    <weaponClasses>
+      <li>ShortShots</li>
+	        <li>RangedHeavy</li>
+
+    </weaponClasses>
+    <recipeMaker>
+	  <researchPrerequisite>PrecisionRifling</researchPrerequisite> 
+      <skillRequirements>
+        <Crafting>8</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+    <statBases>
+	  <MarketValue>500</MarketValue>
+
+      <WorkToMake>50000</WorkToMake>
+      <Mass>3.2</Mass>
+      <AccuracyTouch>0.76</AccuracyTouch>
+      <AccuracyShort>0.72</AccuracyShort>
+      <AccuracyMedium>0.40</AccuracyMedium>
+      <AccuracyLong>0.15</AccuracyLong>
+      <RangedWeapon_Cooldown>1.6</RangedWeapon_Cooldown>
+    </statBases>
+	
+    <costList>
+      <Steel>70</Steel>
+      <ComponentIndustrial>3</ComponentIndustrial>
+    </costList>
+	<weaponTags>
+			<li>IndustrialGunAdvanced</li>
+			<li>ammo_pistol/200</li>
+    </weaponTags>
+
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_PDW</defaultProjectile>
+        <warmupTime>1</warmupTime>
+        <range>27.9</range>
+        <burstShotCount>5</burstShotCount>
+        <ticksBetweenBurstShots>3</ticksBetweenBurstShots>
+        <soundCast>5.7mmsmg_shot</soundCast>
+        <soundCastTail>GunTail_Light</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>grip</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+  
+
+ </Defs>
+

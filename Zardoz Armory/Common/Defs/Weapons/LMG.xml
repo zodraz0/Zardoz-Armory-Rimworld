@@ -1,0 +1,258 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingDef ParentName="BaseBullet">
+		<defName>Bullet_IntermediateLMG</defName>
+		<label>intermediate rifle bullet</label>
+		<graphicData>
+			<texPath>Things/Projectile/Bullet_Small</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile>
+			<damageDef>Bullet</damageDef>
+			<damageAmountBase>11</damageAmountBase>
+			<armorPenetrationBase>0.25</armorPenetrationBase> 
+			<stoppingPower>1.1</stoppingPower>
+			<speed>92</speed>
+		</projectile>
+	</ThingDef>
+	
+	
+	<ThingDef ParentName="BaseBullet">
+		<defName>Bullet_RifleLMG</defName>
+		<label>rifle bullet</label>
+		<graphicData>
+			<texPath>Things/Projectile/Bullet_Small</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile>
+			<damageDef>Bullet</damageDef>
+			<damageAmountBase>16</damageAmountBase>
+			<armorPenetrationBase>0.33</armorPenetrationBase>
+			<stoppingPower>1.2</stoppingPower>
+			<speed>100</speed>
+		</projectile>
+	</ThingDef>
+
+  <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>Gun_LMG</defName>
+    <label>light machine gun</label>
+    <description>Open Bolt Light Machine Gun, fires Intermediate Cartridges, less accurate than an Assault Rifle but makes up for it in volume of fire. \n\nOften called by it's nickname, the SAW.</description>
+    <techLevel>Industrial</techLevel>
+    <smeltable>true</smeltable>
+    <tickerType>Normal</tickerType>
+    <thingCategories>
+      <!-- <li>WeaponsRanged</li> -->
+    </thingCategories>
+    <graphicData>
+      <texPath>LMGs/M249lmg</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+	<equippedAngleOffset>45</equippedAngleOffset>
+	<soundInteract>m16_rack</soundInteract>
+   <thingSetMakerTags><li>RewardStandardQualitySuper</li></thingSetMakerTags>
+    <recipeMaker>
+	
+	<researchPrerequisite>GasOperation</researchPrerequisite>
+	
+	<skillRequirements>
+			<Crafting>8</Crafting>
+	</skillRequirements>
+	</recipeMaker>
+    <statBases>
+		<MarketValue>500</MarketValue>
+
+      <WorkToMake>70000</WorkToMake>
+      <Mass>7.5</Mass>
+      <AccuracyTouch>0.40</AccuracyTouch>
+      <AccuracyShort>0.45</AccuracyShort>
+      <AccuracyMedium>0.55</AccuracyMedium>
+      <AccuracyLong>0.45</AccuracyLong>
+      <RangedWeapon_Cooldown>2.4</RangedWeapon_Cooldown>
+    </statBases>
+	<costList>
+		<Steel>100</Steel>
+		<ComponentIndustrial>6</ComponentIndustrial>
+	</costList>
+    <weaponTags>
+		<li>GunHeavy</li>
+		<li>IndustrialGunAdvanced</li>
+		<li>ammo_intermediate/300</li>
+	</weaponTags>
+	   <weaponClasses>
+      <li>RangedHeavy</li>
+    </weaponClasses>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_IntermediateLMG</defaultProjectile>
+        <warmupTime>1.4</warmupTime>
+        <range>35.9</range>
+        <burstShotCount>6</burstShotCount>
+        <ticksBetweenBurstShots>3</ticksBetweenBurstShots>
+        <soundCast>5.56lmg_shot</soundCast>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>12</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>10</power>
+        <cooldownTime>2.3</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>Gun_GPMG</defName>
+    <label>general purpose machine gun</label>
+    <description>General Purpose Machine Gun, fires Rifle caliber ammunition, can be mounted to a tripod for a stable firing platform.\n\nNot very useful when fired from the shoulder or the hip, looks REALLY cool though. Affectionately called the "Pig".</description>
+    <techLevel>Industrial</techLevel>
+    <smeltable>true</smeltable>
+    <tickerType>Normal</tickerType>
+    <thingCategories>
+      <!-- <li>WeaponsRanged</li> -->
+    </thingCategories>
+    <graphicData>
+      <texPath>LMGs/M60E4lmg</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <drawSize>1.0</drawSize>
+    </graphicData>
+	<equippedAngleOffset>45</equippedAngleOffset>
+	<soundInteract>m16_rack</soundInteract>
+   <thingSetMakerTags><li>RewardStandardQualitySuper</li></thingSetMakerTags>
+   <recipeMaker>
+   
+	<researchPrerequisite>GasOperation</researchPrerequisite>
+	
+	<skillRequirements>
+			<Crafting>10</Crafting>
+	</skillRequirements>
+
+	</recipeMaker>
+    <statBases>
+						            <MarketValue>650</MarketValue>
+
+      <WorkToMake>82000</WorkToMake>
+      <Mass>10</Mass>
+      <AccuracyTouch>0.30</AccuracyTouch>
+      <AccuracyShort>0.40</AccuracyShort>
+      <AccuracyMedium>0.45</AccuracyMedium>
+      <AccuracyLong>0.35</AccuracyLong>
+      <RangedWeapon_Cooldown>2.4</RangedWeapon_Cooldown>
+    </statBases>
+	<costList>
+		<Steel>120</Steel>
+		<ComponentIndustrial>6</ComponentIndustrial>
+	</costList>
+    <weaponTags>
+		<li>GunHeavy</li>
+		<li>IndustrialGunAdvanced</li>
+		<li>ammo_rifle/150</li>
+	</weaponTags>
+	   <weaponClasses>
+      <li>RangedHeavy</li>
+    </weaponClasses>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_RifleLMG</defaultProjectile>
+        <warmupTime>1.5</warmupTime>
+        <range>35.9</range>
+        <burstShotCount>4</burstShotCount>
+        <ticksBetweenBurstShots>5</ticksBetweenBurstShots>
+        <soundCast>7.62lmg_shot</soundCast>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>12</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>10</power>
+        <cooldownTime>2.3</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+  
+  
+  <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>Gun_Minigun</defName>
+    <label>minigun</label>
+    <description>A multi-barrel machine gun. It's unwieldy, but once it starts firing it fires very fast. Where most self-loading guns are powered by the energy from the gunpowder, the minigun uses an electric motor to rapidly cycle cartridges through the weapon.</description>
+    <graphicData>
+      <texPath>LMGs/M134lmg</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <drawSize>1.2</drawSize>
+    </graphicData>
+	<equippedAngleOffset>45</equippedAngleOffset>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <thingSetMakerTags><li>RewardStandardQualitySuper</li></thingSetMakerTags>
+    <weaponClasses>
+      <li>RangedHeavy</li>
+    </weaponClasses>
+    <statBases>
+
+      <WorkToMake>100000</WorkToMake>
+      <Mass>15</Mass>
+      <AccuracyTouch>0.15</AccuracyTouch>
+      <AccuracyShort>0.25</AccuracyShort>
+      <AccuracyMedium>0.25</AccuracyMedium>
+      <AccuracyLong>0.18</AccuracyLong>
+      <RangedWeapon_Cooldown>2.8</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+      <Steel>160</Steel>
+      <ComponentIndustrial>20</ComponentIndustrial>
+    </costList>
+    <recipeMaker>
+      <researchPrerequisite>MultibarrelWeapons</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>12</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+    <techLevel>Industrial</techLevel>
+    <weaponTags>
+      <li>GunHeavy</li>
+    </weaponTags>
+    <equippedStatOffsets>
+      <MoveSpeed>-0.50</MoveSpeed>
+    </equippedStatOffsets>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_IntermediateLMG</defaultProjectile>
+        <warmupTime>2.5</warmupTime>
+        <range>33.9</range>
+        <burstShotCount>20</burstShotCount>
+        <ticksBetweenBurstShots>2</ticksBetweenBurstShots>
+        <soundCast>5.56lmg_shot</soundCast>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>barrels</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>11.7</power>
+        <cooldownTime>2.6</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+    
+  
+ </Defs>
+

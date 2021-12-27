@@ -1,0 +1,273 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<ThingDef ParentName="BaseBullet">
+        <defName>Bullet_HeavyHMG</defName>
+        <label>heavy bullet</label>
+        <graphicData>
+            <texPath>Things/Projectile/Bullet_Small</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <projectile>
+            <damageDef>Bullet</damageDef>
+            <damageAmountBase>30</damageAmountBase>
+            <armorPenetrationBase>0.45</armorPenetrationBase>
+            <stoppingPower>1.5</stoppingPower>
+            <speed>120</speed>
+        </projectile>
+    </ThingDef>
+	
+    <!-- ===================== Turret Base ========================= based off WeaponTech--> 
+  
+	<ThingDef Name="BaseMannableTurret" ParentName="BuildingBase" Abstract="True">
+		<thingClass>Building_TurretGun</thingClass>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<uiIconScale>1.2</uiIconScale>
+		<hasInteractionCell>True</hasInteractionCell>
+		<interactionCellOffset>(0,0,-1)</interactionCellOffset>
+		<minifiedDef>MinifiedThing</minifiedDef>
+		<altitudeLayer>Building</altitudeLayer>
+		<stealable>false</stealable>
+		<rotatable>true</rotatable>
+		<thingCategories>
+			<li>BuildingsSecurity</li>
+		</thingCategories>
+		<designationCategory>Security</designationCategory>
+		
+		<statBases>
+			<Flammability>0.7</Flammability>
+			<Beauty>-20</Beauty>
+			<ShootingAccuracyTurret>0.96</ShootingAccuracyTurret>
+		</statBases>
+		<tickerType>Normal</tickerType>
+		<comps>
+			<li Class="CompProperties_Forbiddable"/>
+			<li Class="CompProperties_Mannable">
+				<manWorkType>Violent</manWorkType>
+			</li>
+		</comps>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<fillPercent>0.5</fillPercent>
+		<hasTooltip>true</hasTooltip>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<building>
+			<ai_combatDangerous>true</ai_combatDangerous>
+		</building>
+		<placeWorkers>
+			<li>PlaceWorker_TurretTop</li>
+		</placeWorkers>
+		<designationHotKey>Misc2</designationHotKey>
+	</ThingDef>
+  
+	<ThingDef Name="BaseMannableTurretMakeable" ParentName="BaseMannableTurret" Abstract="True">
+		
+	</ThingDef>
+
+ 
+    <!-- ===================== M60 Tripod ========================= -->
+
+	<ThingDef ParentName="BaseMannableTurret">
+		<defName>Turret_GPMGTripod</defName>
+		<label>mounted GPMG</label>
+		<description>General pupose machine gun mounted to a tripod.</description>
+		<uiIconPath>Buildings/M60mounted-menu</uiIconPath>
+		<graphicData>
+			<texPath>Buildings/tripod</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(1.5,1.5)</drawSize>
+			<damageData>
+				<rect>(0.5,0.5,0.5,0.5)</rect>
+			</damageData>
+			<shadowData>
+				<volume>(0.27,0.25,0.27)</volume>
+				<offset>(0,0,0)</offset>
+			</shadowData>
+		</graphicData>
+		<statBases>
+			<MaxHitPoints>150</MaxHitPoints>
+			<WorkToBuild>2500</WorkToBuild>
+			<Mass>27.9</Mass>
+		</statBases>
+		<researchPrerequisites>
+			<li>GasOperation</li>
+		</researchPrerequisites>
+		<comps>
+			<li Class="CompProperties_Refuelable">
+				<fuelLabel>Ammo</fuelLabel>
+				<fuelGizmoLabel>Ammo</fuelGizmoLabel>
+				<fuelFilter>
+					<thingDefs>
+						<li>yy_ammo_rifle</li>
+					</thingDefs>
+				</fuelFilter>
+				<fuelCapacity>200</fuelCapacity>
+				<initialFuelPercent>0</initialFuelPercent>
+				<autoRefuelPercent>0.75</autoRefuelPercent>
+				<showFuelGizmo>true</showFuelGizmo>
+				<minimumFueledThreshold>1</minimumFueledThreshold>
+				<fuelMultiplier>1</fuelMultiplier>
+				<factorByDifficulty>false</factorByDifficulty>
+				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+				<outOfFuelMessage>Cannot shoot: Needs ammo</outOfFuelMessage>
+				<fuelIconPath>UI/Overlays/Barrel</fuelIconPath>
+			</li>
+		</comps>
+		<stuffCategories>
+			<li>Metallic</li>
+		</stuffCategories>
+		<costStuffCount>30</costStuffCount>
+		<costList>
+			<Gun_GPMG>1</Gun_GPMG>
+			<ComponentIndustrial>1</ComponentIndustrial>
+		</costList>
+		<specialDisplayRadius>43.9</specialDisplayRadius>
+		<building>
+			<turretGunDef>Gun_GPMGTurret</turretGunDef>
+			<turretBurstWarmupTime>2.2</turretBurstWarmupTime>
+		</building>
+	</ThingDef>
+
+    <!-- ===================== GPMG Turret ========================= -->
+
+	<ThingDef ParentName="BaseWeaponTurret">
+		<defName>Gun_GPMGTurret</defName>
+		<label>mounted GPMG</label>
+		<description>General pupose machine gun mounted to a tripod.</description>
+		<graphicData>
+			<texPath>Buildings/M60mounted</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<statBases>
+			<AccuracyTouch>0.20</AccuracyTouch>
+			<AccuracyShort>0.50</AccuracyShort>
+			<AccuracyMedium>0.75</AccuracyMedium>
+			<AccuracyLong>0.70</AccuracyLong>
+			<RangedWeapon_Cooldown>0.3</RangedWeapon_Cooldown>
+			<DeteriorationRate>0</DeteriorationRate>
+			<Mass>10.9</Mass>
+			<Flammability>0</Flammability>
+		</statBases>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<defaultProjectile>Bullet_RifleBase</defaultProjectile>
+				<warmupTime>2.2</warmupTime>
+				<minRange>6.9</minRange>
+				<range>43.9</range>
+				<burstShotCount>5</burstShotCount>
+				<ticksBetweenBurstShots>5</ticksBetweenBurstShots>
+				<soundCast>7.62lmg_shot</soundCast>
+				<soundCastTail>GunTail_Medium</soundCastTail>
+				<muzzleFlashScale>12</muzzleFlashScale>
+				<consumeFuelPerShot>1</consumeFuelPerShot>
+			</li>
+		</verbs>
+	</ThingDef>
+	
+	    <!-- ===================== GPMG Turret ========================= -->
+
+	
+		<ThingDef ParentName="BaseMannableTurret">
+		<defName>Turret_HMGTripod</defName>
+		<label>mounted HMG</label>
+		<description>Heavy machine gun mounted to a tripod. \n\n WW2, Korea, Vietnam, Desert Storm, Iraq, Lunar Spider rebellion, Mars, and now countless battlefields in the outer Rim.n/n/ Allegedly still in service with several Glitterworlds.</description>
+		<uiIconPath>Buildings/M2HBmounted-menu</uiIconPath>
+		<graphicData>
+			<texPath>Buildings/tripod</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(2,2)</drawSize>
+			<damageData>
+				<rect>(1,1,1,1)</rect>
+			</damageData>
+			<shadowData>
+				<volume>(0.27,0.25,0.27)</volume>
+				<offset>(0,0,0)</offset>
+			</shadowData>
+		</graphicData>
+		<statBases>
+			<MaxHitPoints>150</MaxHitPoints>
+			<WorkToBuild>100000</WorkToBuild>
+			<Mass>40.9</Mass>
+		</statBases>
+		<researchPrerequisites>
+			<li>PrecisionRifling</li>
+		</researchPrerequisites>
+		<comps>
+			<li Class="CompProperties_Refuelable">
+				<fuelLabel>Ammo</fuelLabel>
+				<fuelGizmoLabel>Ammo</fuelGizmoLabel>
+				<fuelFilter>
+					<thingDefs>
+						<li>yy_ammo_heavy</li>
+					</thingDefs>
+				</fuelFilter>
+				<fuelCapacity>100</fuelCapacity>
+				<initialFuelPercent>0</initialFuelPercent>
+				<autoRefuelPercent>0.75</autoRefuelPercent>
+				<showFuelGizmo>true</showFuelGizmo>
+				<minimumFueledThreshold>1</minimumFueledThreshold>
+				<fuelMultiplier>1</fuelMultiplier>
+				<factorByDifficulty>false</factorByDifficulty>
+				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+				<outOfFuelMessage>Cannot shoot: Needs ammo</outOfFuelMessage>
+				<fuelIconPath>UI/Overlays/Barrel</fuelIconPath>
+			</li>
+		</comps>
+		<stuffCategories>
+			<li>Metallic</li>
+		</stuffCategories>
+		<costStuffCount>30</costStuffCount>
+		<costList>
+			<Steel>400</Steel>
+			<ComponentIndustrial>10</ComponentIndustrial>
+		</costList>
+		<specialDisplayRadius>47.9</specialDisplayRadius>
+		<building>
+			<turretGunDef>Gun_HMGTurret</turretGunDef>
+			<turretBurstWarmupTime>3.0</turretBurstWarmupTime>
+		</building>
+	</ThingDef>
+
+    <!-- ===================== HMG Turret ========================= -->
+
+	<ThingDef ParentName="BaseWeaponTurret">
+		<defName>Gun_HMGTurret</defName>
+		<label>mounted HMG</label>
+		<description>Heavy machine gun mounted to a tripod. \n\n WW2, Korea, Vietnam, Desert Storm, Iraq, Lunar Spider rebellion, Mars, Uranus, and now countless battlefields in the outer Rim.\n\n Allegedly still in service with several Glitterworlds.</description>
+		<graphicData>
+			<texPath>Buildings/M2HBmounted</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>1.0</drawSize>
+			<drawOffset>(1.0, 0.0, 0.0)</drawOffset>
+
+		</graphicData>
+		<statBases>
+			<AccuracyTouch>0.20</AccuracyTouch>
+			<AccuracyShort>0.55</AccuracyShort>
+			<AccuracyMedium>0.80</AccuracyMedium>
+			<AccuracyLong>0.75</AccuracyLong>
+			<RangedWeapon_Cooldown>0.3</RangedWeapon_Cooldown>
+			<DeteriorationRate>0</DeteriorationRate>
+			<Mass>10.9</Mass>
+			<Flammability>0</Flammability>
+		</statBases>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<defaultProjectile>Bullet_HeavyHMG</defaultProjectile>
+				<warmupTime>3.0</warmupTime>
+				<minRange>7.9</minRange>
+				<range>43.9</range>
+				<burstShotCount>3</burstShotCount>
+				<ticksBetweenBurstShots>6</ticksBetweenBurstShots>
+				<soundCast>50HMG_shot</soundCast>
+				<soundCastTail>GunTail_Heavy</soundCastTail>
+				<muzzleFlashScale>12</muzzleFlashScale>
+				<consumeFuelPerShot>1</consumeFuelPerShot>
+			</li>
+		</verbs>
+	</ThingDef>
+
+
+
+</Defs>

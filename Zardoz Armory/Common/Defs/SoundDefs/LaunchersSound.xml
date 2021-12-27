@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <SoundDef>
+    <defName>Shot_SPNKr</defName>  
+    <context>MapOnly</context>
+    <eventNames />
+    <subSounds>
+      <li>   
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Launchers/Shot_SPNKr</clipFolderPath>
+          </li>
+        </grains>      
+        <volumeRange>
+          <min>65</min>        
+          <max>65</max>
+        </volumeRange>
+        <pitchRange>
+          <min>0.9</min>
+          <max>1.1</max>
+        </pitchRange>
+        <distRange>
+          <min>0</min>
+          <max>60</max>
+        </distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+   <SoundDef>
+    <defName>Shot_40mm</defName>  
+    <context>MapOnly</context>
+    <eventNames />
+    <subSounds>
+      <li>   
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Launchers/m203_shot</clipFolderPath>
+          </li>
+        </grains>      
+        <volumeRange>
+          <min>65</min>        
+          <max>65</max>
+        </volumeRange>
+        <pitchRange>
+          <min>0.9</min>
+          <max>1.1</max>
+        </pitchRange>
+        <distRange>
+          <min>0</min>
+          <max>60</max>
+        </distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  
+ </Defs>

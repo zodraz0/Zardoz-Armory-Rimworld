@@ -1,0 +1,236 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+<ThingDef ParentName="BaseBullet">
+		<defName>Bullet_12g</defName>
+		<label>buckshot</label>
+		<graphicData>
+			<texPath>Things/Projectile/Bullet_Small</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile>
+			<damageDef>Bullet</damageDef>
+			<damageAmountBase>24</damageAmountBase>
+			<armorPenetrationBase>0.09</armorPenetrationBase>
+			<stoppingPower>3</stoppingPower>
+			<speed>60</speed>
+		</projectile>
+	</ThingDef>
+
+    <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>Gun_PumpShotgun</defName>
+    <label>pump-action shotgun</label>
+    <description>Pump-action shotgun. Fires 6 pellets.\n\nCall it ancient but it has never become obsolete.</description>
+    <graphicData>
+      <texPath>Shotguns/1300shotgun</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+		<equippedAngleOffset>45</equippedAngleOffset>
+
+    <soundInteract>Interact_Shotgun</soundInteract>
+    <statBases>
+      <MarketValue>275</MarketValue>
+      <WorkToMake>50000</WorkToMake>
+      <Mass>3.6</Mass>
+      <AccuracyTouch>0.80</AccuracyTouch>
+      <AccuracyShort>0.87</AccuracyShort>
+      <AccuracyMedium>0.77</AccuracyMedium>
+      <AccuracyLong>0.64</AccuracyLong>
+      <RangedWeapon_Cooldown>1.2</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+      <Steel>25</Steel>
+	  <WoodLog>10</WoodLog>
+	  <ComponentIndustrial>3</ComponentIndustrial>
+    </costList>
+	
+	<thingSetMakerTags><li>RewardStandardQualitySuper</li></thingSetMakerTags>	
+	<recipeMaker>
+		<skillRequirements>
+            <Crafting>4</Crafting>
+        </skillRequirements>
+	 <recipeUsers>
+        <li>ElectricSmithy</li>
+        <li>FueledSmithy</li>
+      </recipeUsers>
+	</recipeMaker>
+    <verbs>
+      <li>
+		<verbClass>ProperShotguns.Verb_ShootShotgun</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_12g</defaultProjectile>
+        <warmupTime>1</warmupTime>
+        <range>17.9</range>
+        <soundCast>12g_pump_shot</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>14</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+  
+  
+    <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>Gun_CombatShotgun</defName>
+    <label>combat shotgun</label>
+    <description>Pump-action shotgun fitted with a bayonet. Fires 6 pellets.\n\nSomeone felt the shotgun was not lethal enough, exploding torsos wasn't enough they wanted to stab them too.</description>
+    <graphicData>
+      <texPath>Shotguns/1897shotgun</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <drawSize>1.2</drawSize>
+    </graphicData>
+		<equippedAngleOffset>45</equippedAngleOffset>
+
+    <soundInteract>Interact_Shotgun</soundInteract>
+    <statBases>
+      <MarketValue>375</MarketValue>
+      <WorkToMake>75000</WorkToMake>
+      <Mass>4.1</Mass>
+      <AccuracyTouch>0.65</AccuracyTouch>
+      <AccuracyShort>0.77</AccuracyShort>
+      <AccuracyMedium>0.70</AccuracyMedium>
+      <AccuracyLong>0.58</AccuracyLong>
+      <RangedWeapon_Cooldown>1.5</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+      <Steel>50</Steel>
+	  <WoodLog>10</WoodLog>
+	  <ComponentIndustrial>4</ComponentIndustrial>
+    </costList>
+	<recipeMaker>
+		<skillRequirements>
+            <Crafting>6</Crafting>
+        </skillRequirements>
+	 <recipeUsers>
+        <li>ElectricSmithy</li>
+        <li>FueledSmithy</li>
+      </recipeUsers>
+	</recipeMaker>
+	
+	<thingSetMakerTags><li>RewardStandardQualitySuper</li></thingSetMakerTags>	
+
+	<weaponTags>
+		<li>ammo_shotgun/360</li>
+	</weaponTags>
+    <verbs>
+      <li>
+		<verbClass>ProperShotguns.Verb_ShootShotgun</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_12g</defaultProjectile>
+        <warmupTime>1</warmupTime>
+        <range>17.9</range>
+        <soundCast>12g_pump_shot</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>14</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>slash</label>
+        <capacities>
+          <li>Cut</li>
+        </capacities>
+        <power>13</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>bayonet</label>
+        <capacities>
+          <li>Stab</li>
+        </capacities>
+        <power>18</power>
+        <cooldownTime>2.5</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+  
+  
+  
+    <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>Gun_ChainShotgun</defName>
+    <label>auto shotgun</label>
+    <description>Semi-Automatic shotgun. Fires 6 pellets.\n\nUtilizes the ARGO system, (Auto Regulating Gas Operated) short stroke dual piston for reliable cycling in all atmospheric conditions.</description>
+    <graphicData>
+      <texPath>Shotguns/1014shotgun</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+	<equippedAngleOffset>45</equippedAngleOffset>
+    <soundInteract>Interact_Shotgun</soundInteract>
+	
+	<recipeMaker>
+		<researchPrerequisite>GasOperation</researchPrerequisite>
+		<skillRequirements>
+			<Crafting>8</Crafting>
+		</skillRequirements>
+		
+	</recipeMaker>
+	<thingSetMakerTags><li>RewardStandardQualitySuper</li></thingSetMakerTags>	
+    <statBases>
+      <MarketValue>450</MarketValue>
+      <WorkToMake>50000</WorkToMake>
+      <Mass>3.6</Mass>
+      <AccuracyTouch>0.80</AccuracyTouch>
+      <AccuracyShort>0.87</AccuracyShort>
+      <AccuracyMedium>0.77</AccuracyMedium>
+      <AccuracyLong>0.64</AccuracyLong>
+      <RangedWeapon_Cooldown>0.7</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+      <Steel>80</Steel>
+	  <ComponentIndustrial>6</ComponentIndustrial>
+    </costList>
+	<weaponTags>
+		<li>ammo_shotgun/360</li>
+	</weaponTags>
+    <verbs>
+      <li>
+		<verbClass>ProperShotguns.Verb_ShootShotgun</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_12g</defaultProjectile>
+        <warmupTime>1</warmupTime>
+        <range>17.9</range>
+        <soundCast>12g_shot</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>14</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+  
+
+ </Defs>
+
