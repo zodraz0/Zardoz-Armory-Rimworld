@@ -40,7 +40,7 @@ Gunsmithing was moved to be in between Smithing and Machining. Historically, bei
     [*]Charge Carbine unlocked with Charge Shot. Charge Ammo.
 [/list] 
 
-Small inconsistency between the art which is my bad (outline size). I need to do another pass on some of the earlier guns I did. 
+Small inconsistency between the art which is my bad (outline size). I need to do another pass on some of the earlier guns I did.  
 
 [h1]To Come[/h1]
 [list]
